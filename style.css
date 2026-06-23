@@ -975,9 +975,24 @@ html.dark .hero-section {
 
 /* Projects Section */
 .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: var(--space-6);
+    overflow-x: auto;
+    padding-bottom: var(--space-4);
+    scroll-snap-type: x mandatory;
+}
+
+.projects-grid::-webkit-scrollbar {
+    height: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+    background-color: var(--color-border-strong);
+    border-radius: var(--radius-full);
+}
+
+.projects-grid::-webkit-scrollbar-track {
+    background-color: transparent;
 }
 
 .project-card {
@@ -985,6 +1000,9 @@ html.dark .hero-section {
     flex-direction: column;
     padding: 0;
     overflow: hidden;
+    flex: 0 0 320px;
+    min-width: 320px;
+    scroll-snap-align: center;
 }
 
 .project-image {
