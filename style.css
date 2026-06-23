@@ -1053,6 +1053,22 @@ html.dark .hero-section {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.cert-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cert-list::-webkit-scrollbar-thumb {
+    background-color: var(--color-border-strong);
+    border-radius: var(--radius-full);
+}
+
+.cert-list::-webkit-scrollbar-track {
+    background-color: transparent;
 }
 
 .cert-card {
