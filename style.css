@@ -1359,3 +1359,98 @@ html.dark .form-success-msg {
         text-align: center;
     }
 }
+
+/* ============================================================
+   IMAGE MODAL
+   ============================================================ */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.image-modal.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.image-modal .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    animation: zoomIn var(--transition-base);
+    object-fit: contain;
+}
+
+#modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #f1f1f1;
+    padding: var(--space-4) 0;
+    font-size: var(--text-lg);
+    font-weight: 500;
+    animation: zoomIn var(--transition-base);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--color-brand);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-card .project-image img {
+    transition: transform var(--transition-base);
+}
+
+.project-card .project-image img:hover {
+    transform: scale(1.05);
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.95); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+@media only screen and (max-width: 700px){
+    .image-modal .modal-content {
+        width: 100%;
+    }
+}

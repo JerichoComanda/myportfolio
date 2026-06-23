@@ -333,4 +333,54 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.warn('Contact form element not found.');
     }
+
+    // ==========================================
+    // Image Modal Logic for Projects
+    // ==========================================
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-img");
+    const captionText = document.getElementById("modal-caption");
+    const closeModal = document.querySelector(".close-modal");
+
+    // Get all project images
+    const projectImages = document.querySelectorAll(".project-card .project-image img");
+
+    if (modal && modalImg && projectImages.length > 0) {
+        projectImages.forEach(img => {
+            // Make image look clickable
+            img.style.cursor = 'pointer';
+            
+            img.addEventListener('click', function() {
+                modal.classList.add("active");
+                modalImg.src = this.src;
+                // Try to get title from project card
+                const projectCard = this.closest('.project-card');
+                if (projectCard) {
+                    const title = projectCard.querySelector('.project-title');
+                    captionText.innerHTML = title ? title.innerText : this.alt;
+                } else {
+                    captionText.innerHTML = this.alt;
+                }
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', function() {
+            modal.classList.remove("active");
+        });
+
+        // Close modal on outside click
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove("active");
+            }
+        });
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape" && modal.classList.contains("active")) {
+                modal.classList.remove("active");
+            }
+        });
+    }
 });
