@@ -1312,6 +1312,14 @@ html.dark .form-success-msg {
 
     .hero-image-wrapper {
         order: -1; /* Image on top for mobile */
+        width: 100%;
+    }
+    
+    .hero-image-placeholder {
+        width: 320px;
+        height: 320px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .hero-title {
@@ -1351,6 +1359,13 @@ html.dark .form-success-msg {
 
     .hero-actions {
         flex-direction: column;
+    }
+    
+    .hero-image-placeholder {
+        width: 260px;
+        height: 260px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .skills-grid {
