@@ -1530,3 +1530,75 @@ html.dark .form-success-msg {
         width: 100%;
     }
 }
+
+/* ============================================================
+   BADGE MODAL
+   ============================================================ */
+.badge-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-modal.active {
+    display: flex;
+}
+
+.badge-modal-box {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    animation: zoomIn 200ms ease;
+    max-width: 360px;
+    width: 90%;
+}
+
+.badge-modal-close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-overlay);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.badge-modal-close:hover {
+    background-color: var(--color-brand);
+    color: white;
+    border-color: var(--color-brand);
+}
+
+.badge-modal-img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+}
+
+.badge-modal-verify-btn {
+    width: 100%;
+    font-size: var(--text-sm);
+}

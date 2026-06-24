@@ -383,4 +383,45 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==========================================
+    // Badge Modal Logic
+    // ==========================================
+    const badgeModal = document.getElementById('badge-modal');
+    const badgeModalImg = document.getElementById('badge-modal-img');
+    const badgeModalVerify = document.getElementById('badge-modal-verify');
+    const badgeModalClose = document.getElementById('badge-modal-close');
+    const badgeIcons = document.querySelectorAll('.cert-badge-icon');
+
+    if (badgeModal && badgeIcons.length > 0) {
+        badgeIcons.forEach(icon => {
+            icon.style.cursor = 'pointer';
+            icon.addEventListener('click', function () {
+                badgeModalImg.src = this.src;
+                badgeModalImg.alt = this.alt;
+                badgeModalVerify.href = this.getAttribute('data-credly') || '#';
+                badgeModal.classList.add('active');
+                if (window.lucide) lucide.createIcons();
+            });
+        });
+
+        // Close on X button
+        badgeModalClose.addEventListener('click', function () {
+            badgeModal.classList.remove('active');
+        });
+
+        // Close on backdrop click
+        badgeModal.addEventListener('click', function (e) {
+            if (e.target === badgeModal) {
+                badgeModal.classList.remove('active');
+            }
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && badgeModal.classList.contains('active')) {
+                badgeModal.classList.remove('active');
+            }
+        });
+    }
 });

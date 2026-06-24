@@ -85,15 +85,12 @@
                     </div>
                     <div class="hero-cert-badges">
                         <h2 class="cert-badge-title">Badges</h2>
-                        <!-- Replace href with your badge verification link (e.g., from Credly) -->
-                        <a href="https://www.credly.com/badges/9c665c1d-ae3b-4f7b-80f6-c4962fe39c48" target="_blank" rel="noopener noreferrer" class="badge-link" aria-label="Verify Cisco Certification">
-                            <!-- Replace src with your actual badge image filename -->
-                            <img src="cyberbadge.png" alt="Cisco Certification Badge" class="cert-badge-icon" title="Cisco Certification">
-                        </a>
-                        <a href="https://www.credly.com/badges/1cf53832-e697-45a7-aa50-764d05a59785" target="_blank" rel="noopener noreferrer" class="badge-link" aria-label="Verify Cisco Certification">
-                            <!-- Replace src with your actual badge image filename -->
-                            <img src="computerbadge.png" alt="Cisco Certification Badge" class="cert-badge-icon" title="Cisco Certification">
-                        </a>
+                        <img src="cyberbadge.png" alt="Cisco Certification Badge" class="cert-badge-icon"
+                             data-credly="https://www.credly.com/badges/9c665c1d-ae3b-4f7b-80f6-c4962fe39c48"
+                             title="Click to view badge">
+                        <img src="computerbadge.png" alt="Computer Badge" class="cert-badge-icon"
+                             data-credly="https://www.credly.com/badges/1cf53832-e697-45a7-aa50-764d05a59785"
+                             title="Click to view badge">
                     </div>
                 </div>
                 <div class="hero-image-wrapper">
@@ -731,6 +728,17 @@
         <span class="close-modal" aria-label="Close modal"><i data-lucide="x"></i></span>
         <img class="modal-content" id="modal-img">
         <div id="modal-caption"></div>
+    </div>
+
+    <!-- Badge Modal -->
+    <div id="badge-modal" class="badge-modal">
+        <div class="badge-modal-box">
+            <span class="badge-modal-close" id="badge-modal-close" aria-label="Close"><i data-lucide="x"></i></span>
+            <img id="badge-modal-img" src="" alt="Certification Badge" class="badge-modal-img">
+            <a id="badge-modal-verify" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary badge-modal-verify-btn">
+                <i data-lucide="external-link" class="icon-sm"></i> Verify on Credly
+            </a>
+        </div>
     </div>
 
     <script src="script.js"></script>
