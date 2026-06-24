@@ -654,6 +654,15 @@ html.dark .hero-section {
     gap: var(--space-4);
     margin-top: var(--space-5);
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.cert-badge-title {
+    font-family: inherit;
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0;
 }
 
 .cert-badge-icon {
