@@ -662,7 +662,8 @@ html.dark .hero-section {
     font-size: var(--text-lg);
     font-weight: 600;
     color: var(--color-text-primary);
-    margin: 0;
+    margin: 0 0 var(--space-3) 0;
+    width: 100%;
 }
 
 .cert-badge-icon {
