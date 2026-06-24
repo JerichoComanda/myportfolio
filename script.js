@@ -120,7 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "Software Developer",
         "IT Support Specialist",
         "Web Designer",
-        "Database Administrator"
+        "Database Administrator",
+        "Computer Technician"
     ];
     let count = 0;
     let index = 0;
