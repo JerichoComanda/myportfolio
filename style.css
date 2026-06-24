@@ -649,6 +649,29 @@ html.dark .hero-section {
     gap: var(--space-3);
 }
 
+.hero-cert-badges {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+    align-items: center;
+}
+
+.cert-badge-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    background-color: var(--color-surface); /* gives a clean background if image has transparency */
+    padding: 2px;
+}
+
+.cert-badge-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
 .social-link {
     display: flex;
     align-items: center;
@@ -1337,6 +1360,10 @@ html.dark .form-success-msg {
     }
     
     .hero-socials {
+        justify-content: center;
+    }
+    
+    .hero-cert-badges {
         justify-content: center;
     }
     
