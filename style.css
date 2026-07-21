@@ -571,7 +571,7 @@ html.dark .hero-section {
 .badge-dot {
     width: 8px;
     height: 8px;
-    background-color: hsl(142, 71%, 45%); /* Semantic green */
+    background-color: var(--color-error); /* Red color for unavailable */
     border-radius: 50%;
     position: relative;
 }
@@ -583,7 +583,7 @@ html.dark .hero-section {
     left: -2px;
     width: 12px;
     height: 12px;
-    background-color: hsl(142, 71%, 45%);
+    background-color: var(--color-error);
     border-radius: 50%;
     opacity: 0.4;
     animation: pulse 2s infinite;
